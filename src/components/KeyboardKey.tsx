@@ -6,6 +6,8 @@ interface KeyboardKeyProps {
 }
 
 const KeyboardKey: React.SFC<KeyboardKeyProps> = ({ name, value }) => {
+  if (!value) return null;
+
   return (
     <div className="keyboard-list__element">
       <kbd>{name.toUpperCase()}</kbd>: {value}

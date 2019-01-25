@@ -11,6 +11,8 @@ const keymap = {
   e: 'zabić',
 };
 
+const KEYS = `qwertyuiop[]asdfghjkl;'\\zxcvbnm,./`.split('');
+
 class App extends React.Component<undefined, undefined> {
   componentDidMount() {
     document.addEventListener('keydown', (e) => {
@@ -25,7 +27,7 @@ class App extends React.Component<undefined, undefined> {
   render() {
     return (
       <div>
-        {Object.keys(keymap).map(key => (
+        {KEYS.map(key => (
           <KeyboardKey name={key} value={keymap[key]} key={key} />
         ))}
       </div>
