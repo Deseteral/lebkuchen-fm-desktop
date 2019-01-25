@@ -20,6 +20,7 @@ kbd {
 
 .keyboard-list__container {
   columns: 180px 3;
+  height: 405px;
 }
 
 .keyboard-list__element {
