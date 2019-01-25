@@ -5,7 +5,7 @@ import * as XService from '../services/x-service';
 import KeyboardKey from './KeyboardKey';
 import Button from './Button';
 
-const KEYS = `qwertyuiop[]asdfghjkl;'\\zxcvbnm,./`.split('');
+const KEYS = 'qwertyuiop[]asdfghjkl;\'\\zxcvbnm,./'.split('');
 const window = remote.getCurrentWindow();
 
 interface AppState {
@@ -32,7 +32,7 @@ class App extends React.Component<undefined, AppState> {
     });
 
     ConfigService.getConfig()
-      .onDidChange('keymap', (newKeymap) => this.setState({ keymap: newKeymap }));
+      .onDidChange('keymap', newKeymap => this.setState({ keymap: newKeymap }));
   }
 
   render() {
@@ -46,7 +46,7 @@ class App extends React.Component<undefined, AppState> {
           ))}
         </div>
         <div className="keyboard-list__bottom-container">
-        <Button onClick={() => ConfigService.getConfig().set('keymap', {})}>clear</Button>
+          <Button onClick={() => ConfigService.getConfig().set('keymap', {})}>clear</Button>
           <Button onClick={() => ConfigService.setDefaultKeymap()}>set defaults</Button>
         </div>
       </div>

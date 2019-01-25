@@ -18,6 +18,6 @@ const KeyboardKey: React.SFC<KeyboardKeyProps> = ({ name, value }) => {
       <kbd>{name.toUpperCase()}</kbd>: {displayValue}
     </div>
   );
-}
+};
 
 export default KeyboardKey;

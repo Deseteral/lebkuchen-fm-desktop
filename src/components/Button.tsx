@@ -5,12 +5,10 @@ interface ButtonProps {
   onClick: () => void
 }
 
-const Button: React.SFC<ButtonProps> = ({ children, onClick }) => {
-  return (
-    <button className="button" onClick={onClick}>
-      {children}
-    </button>
-  );
-}
+const Button: React.SFC<ButtonProps> = ({ children, onClick }) => (
+  <button className="button" onClick={onClick} type="button">
+    {children}
+  </button>
+);
 
 export default Button;
