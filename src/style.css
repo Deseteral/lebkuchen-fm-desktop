@@ -1,3 +1,27 @@
 body {
-  background: palegreen;
+  background: #232F32;
+  margin: 0;
+  padding: 16px;
+  color: #F9AA33;
+  font-family: 'Roboto Slab', serif;
+}
+
+kbd {
+  display: inline-block;
+  width: 23px;
+  margin-right: 5px;
+  padding: 4px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 17px;
+  text-align: center;
+  border: 1px solid #F9AA33;
+  border-radius: 2px;
+}
+
+.keyboard-list__element {
+  margin-bottom: 4px;
+}
+
+.keyboard-list__element:last-of-type {
+  margin-bottom: 0;
 }

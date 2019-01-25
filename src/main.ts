@@ -12,10 +12,11 @@ if (isDevMode) {
 
 app.on('ready', async () => {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 640,
+    height: 480,
     show: false,
     frame: false,
+    resizable: false,
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);

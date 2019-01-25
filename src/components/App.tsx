@@ -25,7 +25,9 @@ class App extends React.Component<undefined, undefined> {
     return (
       <div>
         {Object.keys(keymap).map(key => (
-          <div><kbd>{key.toUpperCase()}</kbd>: {keymap[key]}</div>
+          <div className="keyboard-list__element">
+            <kbd>{key.toUpperCase()}</kbd>: {keymap[key]}
+          </div>
         ))}
       </div>
     );
