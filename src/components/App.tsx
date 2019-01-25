@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { remote } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
 import * as XService from '../services/x-service';
+import KeyboardKey from './KeyboardKey';
 
 const window = remote.getCurrentWindow();
 
@@ -25,9 +26,7 @@ class App extends React.Component<undefined, undefined> {
     return (
       <div>
         {Object.keys(keymap).map(key => (
-          <div className="keyboard-list__element">
-            <kbd>{key.toUpperCase()}</kbd>: {keymap[key]}
-          </div>
+          <KeyboardKey name={key} value={keymap[key]} key={key} />
         ))}
       </div>
     );
