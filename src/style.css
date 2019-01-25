@@ -18,8 +18,16 @@ kbd {
   border-radius: 2px;
 }
 
+.keyboard-list__container {
+  columns: 180px 3;
+}
+
 .keyboard-list__element {
   margin-bottom: 4px;
+}
+
+.keyboard-list__element--empty {
+  opacity: 0.37;
 }
 
 .keyboard-list__element:last-of-type {

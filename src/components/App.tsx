@@ -26,7 +26,7 @@ class App extends React.Component<undefined, undefined> {
 
   render() {
     return (
-      <div>
+      <div className="keyboard-list__container">
         {KEYS.map(key => (
           <KeyboardKey name={key} value={keymap[key]} key={key} />
         ))}

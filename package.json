@@ -47,12 +47,15 @@
     }
   },
   "dependencies": {
+    "@types/classnames": "2.2.7",
     "@types/electron-devtools-installer": "2.2.0",
     "@types/react": "16.7.20",
     "@types/react-dom": "16.0.11",
+    "classnames": "2.2.6",
     "electron-compile": "6.4.4",
     "electron-devtools-installer": "2.2.4",
     "electron-squirrel-startup": "1.0.0",
+    "electron-store": "2.0.0",
     "eslint-plugin-typescript": "0.14.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
