@@ -1,9 +1,24 @@
+:root {
+  --color-primary: #F9AA33;
+  --color-background: #232F32;
+}
+
 body {
-  background: #232F32;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-background);
   margin: 0;
-  padding: 16px;
-  color: #F9AA33;
+  color: var(--color-primary);
   font-family: 'Roboto Slab', serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: 480px;
+  box-sizing: border-box;
 }
 
 kbd {
@@ -12,10 +27,38 @@ kbd {
   margin-right: 5px;
   padding: 4px;
   font-family: 'Roboto Mono', monospace;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  border: 1px solid #F9AA33;
+  border: 1px solid var(--color-primary);
   border-radius: 2px;
+}
+
+.button {
+  margin-right: 4px;
+  border: 1px solid var(--color-primary);
+  border-radius: 2px;
+  color: var(--color-primary);
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  background: none;
+  opacity: 0.57;
+  transition: opacity .3s ease-in-out;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.button:active {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+.button:last-of-type {
+  margin-right: 0;
 }
 
 .keyboard-list__container {
@@ -33,4 +76,10 @@ kbd {
 
 .keyboard-list__element:last-of-type {
   margin-bottom: 0;
+}
+
+.keyboard-list__bottom-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }

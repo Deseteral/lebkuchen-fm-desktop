@@ -43,4 +43,8 @@ function getConfig() {
   return config;
 }
 
-export { getConfig };
+function setDefaultKeymap() {
+  config.set('keymap', DEFAULTS.keymap);
+}
+
+export { getConfig, setDefaultKeymap };
