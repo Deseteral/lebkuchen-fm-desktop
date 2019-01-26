@@ -5,7 +5,7 @@ import * as XService from '../services/x-service';
 import KeyboardKey from './KeyboardKey';
 import Button from './Button';
 
-const KEYS = 'qwertyuiop[]asdfghjkl;\'\\zxcvbnm,./'.split('');
+const KEYS = 'qwertyuiop[]asdfghjkl;\'\\zxcvbnm,.'.split('');
 const window = remote.getCurrentWindow();
 
 interface AppState {
@@ -24,6 +24,7 @@ class App extends React.Component<undefined, AppState> {
     const { keymap } = this.state;
 
     document.addEventListener('keydown', (e) => {
+      if (e.target !== document.body) return;
       if (e.key === 'Escape') window.hide();
 
       const xName = keymap[e.key];
@@ -31,8 +32,15 @@ class App extends React.Component<undefined, AppState> {
       window.hide();
     });
 
-    ConfigService.getConfig()
+    ConfigService
+      .getConfig()
       .onDidChange('keymap', newKeymap => this.setState({ keymap: newKeymap }));
+  }
+
+  setNewValueForKey(value: string, key: string) {
+    const keymap = ConfigService.getConfig().get('keymap');
+    keymap[key] = value;
+    ConfigService.getConfig().set('keymap', keymap);
   }
 
   render() {
@@ -42,7 +50,12 @@ class App extends React.Component<undefined, AppState> {
       <div className="app-container">
         <div className="keyboard-list__container">
           {KEYS.map(key => (
-            <KeyboardKey name={key} value={keymap[key]} key={key} />
+            <KeyboardKey
+              name={key}
+              value={keymap[key]}
+              onSave={value => this.setNewValueForKey(value, key)}
+              key={key}
+            />
           ))}
         </div>
         <div className="keyboard-list__bottom-container">

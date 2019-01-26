@@ -70,6 +70,10 @@ kbd {
   margin-bottom: 4px;
 }
 
+.keyboard-list__element kbd + div { /* react-editable-label container */
+  display: inline-block;
+}
+
 .keyboard-list__element--empty {
   opacity: 0.37;
 }
@@ -82,4 +86,22 @@ kbd {
   display: flex;
   align-items: center;
   flex: 1;
+}
+
+.editable-label__label {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.editable-label__input {
+  display: inline-block;
+  background: none;
+  color: var(--color-primary);
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid var(--color-primary);
+  border-radius: 2px;
+  padding: 4px;
+  width: 144px;
 }

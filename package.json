@@ -60,6 +60,7 @@
     "eslint-plugin-typescript": "0.14.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
+    "react-editable-label": "1.0.1",
     "react-hot-loader": "4.6.3",
     "tslib": "1.9.3",
     "typescript-eslint-parser": "22.0.0"
