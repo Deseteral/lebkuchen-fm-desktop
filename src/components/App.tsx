@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { remote } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
+import { remote, ipcRenderer } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
 import * as ConfigService from '../services/config-service';
 import * as XService from '../services/x-service';
 import KeyboardKey from './KeyboardKey';
@@ -29,7 +29,7 @@ class App extends React.Component<undefined, AppState> {
 
       const xName = keymap[e.key];
       XService.playX(xName);
-      window.hide();
+      ipcRenderer.send('app-blur');
     });
 
     ConfigService

@@ -1,4 +1,4 @@
-import { app, BrowserWindow, globalShortcut } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
+import { app, BrowserWindow, globalShortcut, ipcMain } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import { enableLiveReload } from 'electron-compile';
 
@@ -32,6 +32,11 @@ app.on('ready', async () => {
 
   mainWindow.on('closed', () => {
     mainWindow = null;
+  });
+
+  ipcMain.on('app-blur', () => {
+    (mainWindow as BrowserWindow).hide();
+    app.hide();
   });
 });
 

@@ -1,6 +1,6 @@
 {
   "name": "lebkuchen-fm-desktop",
-  "productName": "lebkuchen-fm-desktop",
+  "productName": "LebkuchenFM",
   "version": "1.0.0",
   "description": "Desktop application for LebkuchenFM",
   "main": "src/main.ts",
