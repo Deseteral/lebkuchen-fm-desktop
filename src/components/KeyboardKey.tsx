@@ -18,7 +18,12 @@ const KeyboardKey: React.SFC<KeyboardKeyProps> = ({ name, value, onSave }) => {
   return (
     <div className={className}>
       <kbd>{name.toUpperCase()}</kbd>
-      <EditableLabel initialValue={displayValue} save={onSave} labelClass="editable-label__label" inputClass="editable-label__input" />
+      <EditableLabel
+        initialValue={displayValue}
+        save={onSave}
+        labelClass="editable-label__label"
+        inputClass="editable-label__input"
+      />
     </div>
   );
 };

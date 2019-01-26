@@ -38,7 +38,7 @@ class App extends React.Component<undefined, AppState> {
   }
 
   setNewValueForKey(value: string, key: string) {
-    const keymap = ConfigService.getConfig().get('keymap');
+    const { keymap } = this.state;
     keymap[key] = value;
     ConfigService.getConfig().set('keymap', keymap);
   }
@@ -59,8 +59,12 @@ class App extends React.Component<undefined, AppState> {
           ))}
         </div>
         <div className="keyboard-list__bottom-container">
-          <Button onClick={() => ConfigService.getConfig().set('keymap', {})}>clear</Button>
-          <Button onClick={() => ConfigService.setDefaultKeymap()}>set defaults</Button>
+          <Button onClick={() => ConfigService.clearKeymap()}>
+            clear
+          </Button>
+          <Button onClick={() => ConfigService.setDefaultKeymap()}>
+            set defaults
+          </Button>
         </div>
       </div>
     );
